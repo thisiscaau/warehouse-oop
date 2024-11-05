@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox alignment="CENTER" styleClass="background" prefWidth="400.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+        <Separator/>
+        <Label text="Login" styleClass="heading"/>
+        <Separator/>
+        
+        <GridPane alignment="CENTER">
+            <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="usernameTf" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label text="Password" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <PasswordField fx:id="passwordPf" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        </GridPane>
+
+        <HBox styleClass="hbox">
+            <Button text="Login" disable="true" fx:id="loginBtn" prefWidth="400" onAction="#login"/>
+            <Button text="Exit" prefWidth="400" onAction="#close"/>
+        </HBox>
+
+        <stylesheets>
+            <URL value="@style.css"/>
+        </stylesheets>
+</VBox>

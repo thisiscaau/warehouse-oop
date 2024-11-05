@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+
+
+<VBox alignment="CENTER" styleClass="background" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1" 
+    fx:controller="controller.Cart.CartController">
+
+    <ImageView fitWidth="600.0" fitHeight="100.0">
+        <image>
+            <Image url="@../../image/cart.png"/>
+        </image>
+    </ImageView>
+
+    <Separator/>
+        <Label text="${'Ordering from ' + controller.cart.supplier.name}" styleClass="heading"/>
+    <Separator/>
+
+    <TableView fx:id="productsTv" prefWidth="600" prefHeight="300">
+        <columns>
+            <TableColumn text="Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Price">
+                <cellValueFactory>
+                    <PropertyValueFactory property="price"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Stock">
+                <cellValueFactory>
+                    <PropertyValueFactory property="stock"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+
+    <HBox styleClass="hbox">
+        <Button fx:id="addBtn" text="Add" prefWidth="400" onAction="#add" disable="true"/>
+        <Button text="View" prefWidth="400" onAction="#view"/>
+        <Button text="Cancel" prefWidth="400" onAction="#close"/>
+        <Button text="Checkout" prefWidth="400" onAction="#checkout"/>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@../style.css"/>
+    </stylesheets>
+
+</VBox>

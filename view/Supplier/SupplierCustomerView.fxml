@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+
+
+<VBox alignment="CENTER" styleClass="background" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1" 
+    fx:controller="controller.Supplier.SupplierCustomerController">
+
+    <ImageView fitWidth="600.0" fitHeight="100.0">
+        <image>
+            <Image url="@../../image/supplier.png"/>
+        </image>
+    </ImageView>
+
+    <Separator/>
+        <Label text="${'Welcome to ' + controller.supplier.name + ' (Total Profit: ' + controller.supplier.profit + ')'}" styleClass="heading"/>
+    <Separator/>
+
+    <TableView fx:id="productsTv" prefWidth="600" prefHeight="300">
+        <columns>
+            <TableColumn text="Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Price">
+                <cellValueFactory>
+                    <PropertyValueFactory property="price"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Stock">
+                <cellValueFactory>
+                    <PropertyValueFactory property="stock"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+
+    <HBox styleClass="hbox">
+        <Button fx:id="orderBtn" text="Order" prefWidth="400" onAction="#order"/>
+        <Button text="Close" prefWidth="400" onAction="#close"/>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@../style.css"/>
+    </stylesheets>
+
+</VBox>

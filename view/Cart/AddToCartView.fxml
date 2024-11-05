@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Priority?>
+
+<VBox alignment="CENTER" styleClass="background" prefWidth="600.0" spacing="20" 
+    xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Cart.AddToCartController">
+
+    <ImageView fitWidth="600.0" fitHeight="100.0">
+        <image>
+            <Image url="@../../image/cart.png"/>
+        </image>
+    </ImageView>
+
+    <Separator/>
+        <Label fx:id="productLbl" text="" styleClass="heading"/>
+    <Separator/>
+
+    <GridPane hgap="10">
+        <Label text="Stock:" styleClass="label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="quantityTf" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.hgrow="ALWAYS"/>
+    </GridPane>
+
+    <HBox styleClass="hbox">
+        <Button text="Add" prefWidth="600" onAction="#add"/>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@../style.css"/>
+    </stylesheets>
+
+</VBox>
